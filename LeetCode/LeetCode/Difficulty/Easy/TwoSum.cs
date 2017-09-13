@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestApp
+namespace LeetCode
 {
-    internal class TwoSum
+    public class TwoSum
     {
         public static int[] TwoSumFunc(int[] nums, int target)
         {
