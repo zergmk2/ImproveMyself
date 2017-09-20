@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="Pre-Build">
+  <PropertyGroup>
+    <Common_Base_Dir>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), LeetCode.sln))</Common_Base_Dir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(out_dist_root)' == '' ">
+    <out_dist_root>$(Common_Base_Dir)\out\dist</out_dist_root>
+    <out_dist_pdb>$(Common_Base_Dir)\out\dist\pdb</out_dist_pdb>
+    <out_solution_intermediates>$(Common_Base_Dir)\out\intermediates</out_solution_intermediates>
+    </PropertyGroup>
+    <PropertyGroup>
+      <out_pdb_base>$(out_dist_pdb)</out_pdb_base>
+      <out_intermediates_base>$(out_solution_intermediates)</out_intermediates_base>
+      <OutputPath>$(out_dist_root)\$(SolutionName)\$(Configuration)\</OutputPath>
+      <BaseIntermediateOutputPath>$(out_dist_root)\$(SolutionName)\obj\$(Configuration)\</BaseIntermediateOutputPath> 
+      <IntermediateOutputPath>$(BaseIntermediateOutputPath)\</IntermediateOutputPath>
+   </PropertyGroup>
+   <PropertyGroup >
+      <PlatformVer>v140</PlatformVer>
+      <PlatformVer Condition=" '$(VS140COMNTOOLS)' == '' ">v120</PlatformVer>
+   </PropertyGroup>
+  <Target Name="Pre-Build">
+    <Exec Command="if not exist &quot;$(Common_Base_Dir)\out&quot; md &quot;$(Common_Base_Dir)\out&quot;" />
+  </Target>
+</Project>
