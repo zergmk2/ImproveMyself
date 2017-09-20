@@ -65,5 +65,37 @@ namespace LeetCode.Difficulty.Easy
 
             return head + 1;
         }
+
+        public static int SearchInsert(int[] nums, int target)
+        {
+            if (nums == null)
+            {
+                return -1;
+            }
+            else if (nums.Length == 0)
+            {
+                return -1;
+            }
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == target)
+                {
+                    return i;
+                }
+                else if (nums[i] < target)
+                {
+                    continue;
+                }
+                else if (nums[i] > target)
+                {
+                    return i;
+                }
+            }
+
+            return nums.Length;
+        }
     }
+
+
 }
