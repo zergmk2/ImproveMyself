@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Difficulty\Easy\ArrayProblems.cs" />
+    <Compile Include="Difficulty\Easy\RemoveDuplicatesfromSortedArray.cs" />
     <Compile Include="Difficulty\Medium\AddTwoNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Difficulty\Easy\TwoSum.cs" />

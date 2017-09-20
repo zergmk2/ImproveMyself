@@ -48,6 +48,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Difficulty\Easy\ArrayProblemsTests.cs" />
     <Compile Include="Difficulty\Medium\AddTwoNumbersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
