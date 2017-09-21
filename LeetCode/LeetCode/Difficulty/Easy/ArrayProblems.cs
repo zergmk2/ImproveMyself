@@ -95,6 +95,54 @@ namespace LeetCode.Difficulty.Easy
 
             return nums.Length;
         }
+
+        public static int MaxSubArray(int[] nums)
+        {
+            if (nums == null)
+            {
+                return 0;
+            }
+            else if (nums.Length == 0)
+            {
+                return 0;
+            }
+
+            int sum = nums[0];
+            int max = nums[0];
+
+            for (int i = 1; i < nums.Length; i++)
+            {
+                sum = sum < 0 ? nums[i] : nums[i] + sum;
+                max = Math.Max(max, sum);
+            }
+
+            return max;
+        }
+
+        public static int[] PlusOne(int[] digits)
+        {
+            int sum = digits[digits.Length -1] + 1;
+            digits[digits.Length - 1] = sum % 10;
+            int carry = sum / 10;
+            for (int i = digits.Length - 2; i >= 0; i--)
+            {
+                sum = digits[i] + carry;
+                digits[i] = sum % 10;
+                carry = sum / 10;
+            }
+
+            if (carry == 1)
+            {
+                int[] ret = new int[digits.Length + 1];
+                for (int i = 0; i < digits.Length; i ++)
+                {
+                    ret[i + 1] = digits[i];
+                }
+                ret[0] = carry;
+                return ret;
+            }
+            return digits;
+        }
     }
 
 
